@@ -1,7 +1,8 @@
-'use client'
+'use client';
 
-import React, { useState } from 'react'
-import Link from 'next/link'
+import * as React from 'react';
+import { useState } from 'react';
+import Link from 'next/link';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
