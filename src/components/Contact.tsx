@@ -1,7 +1,8 @@
-'use client'
+'use client';
 
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import * as React from 'react';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface FormData {
   company: string
