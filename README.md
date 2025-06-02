@@ -8,36 +8,41 @@ NTTコムウェアの様々なソリューションを紹介するWebサイト�
 
 ## 🚀 技術スタック
 
-- **フロントエンド**: React + Next.js
+- **フロントエンド**: React + Next.js 14
 - **スタイリング**: Tailwind CSS
 - **状態管理**: React Context API
 - **アニメーション**: Framer Motion
 - **型安全性**: TypeScript
+- **パッケージマネージャー**: npm
 
-## 📁 プロジェクト構造（予定）
+## 📁 プロジェクト構造
 
 ```
 src/
-├── components/          # 再利用可能なコンポーネント
-│   ├── common/         # 共通コンポーネント
-│   ├── layout/         # レイアウト関連
-│   └── sections/       # セクション別コンポーネント
-├── pages/              # Next.jsページ
-├── styles/             # スタイルファイル
-├── data/               # 静的データ
-├── hooks/              # カスタムフック
-├── utils/              # ユーティリティ関数
-└── types/              # TypeScript型定義
+├── app/                # Next.js App Router
+│   ├── globals.css     # グローバルスタイル
+│   ├── layout.tsx      # レイアウトコンポーネント
+│   └── page.tsx        # メインページ
+├── components/         # 再利用可能なコンポーネント
+│   ├── Header.tsx      # ヘッダー・ナビゲーション
+│   ├── Hero.tsx        # ヒーローセクション
+│   ├── Solutions.tsx   # ソリューション概要
+│   ├── Contact.tsx     # お問い合わせフォーム
+│   └── Footer.tsx      # フッター
+├── next.config.js      # Next.js設定
+├── tailwind.config.js  # Tailwind CSS設定
+├── tsconfig.json       # TypeScript設定
+└── package.json        # 依存関係とスクリプト
 ```
 
 ## 🎯 MVP機能
 
-### Phase 1: 基本構造
+### Phase 1: 基本構造 ✅
 - [x] 要件定義書作成
-- [ ] レスポンシブなランディングページ
-- [ ] ソリューションカテゴリの概要表示
-- [ ] 基本的なナビゲーション
-- [ ] お問い合わせフォーム
+- [x] レスポンシブなランディングページ
+- [x] ソリューションカテゴリの概要表示
+- [x] 基本的なナビゲーション
+- [x] お問い合わせフォーム
 
 ### Phase 2: コンテンツ拡充
 - [ ] 詳細なソリューション説明ページ
@@ -55,12 +60,61 @@ src/
 
 詳細な要件定義書は [CLAUDE.md](./CLAUDE.md) をご覧ください。
 
-## 🔧 開発開始手順
+## 🛠️ 開発環境のセットアップ
 
-1. Node.js環境の準備
-2. Next.jsプロジェクトの初期化
-3. 必要なパッケージのインストール
-4. 基本的なページ構造の作成
+### 必要な環境
+- **Node.js**: v18.0.0 以上
+- **npm**: v8.0.0 以上（Node.jsに同梱）
+
+### 🚀 プロジェクトの起動方法
+
+1. **リポジトリのクローン**
+   ```bash
+   git clone https://github.com/Be114/demo2.git
+   cd demo2
+   ```
+
+2. **依存関係のインストール**
+   ```bash
+   npm install
+   ```
+
+3. **開発サーバーの起動**
+   ```bash
+   npm run dev
+   ```
+
+4. **ブラウザでアクセス**
+   ```
+   http://localhost:3000
+   ```
+
+### 📦 利用可能なスクリプト
+
+- `npm run dev` - 開発サーバーを起動（ホットリロード有効）
+- `npm run build` - 本番用ビルドを作成
+- `npm run start` - 本番用サーバーを起動（事前に`npm run build`が必要）
+- `npm run lint` - ESLintによるコード検証
+- `npm run type-check` - TypeScriptの型チェック
+
+### 🔧 開発時の推奨フロー
+
+1. **機能開発前**
+   ```bash
+   npm run type-check  # 型エラーチェック
+   npm run lint        # コード品質チェック
+   ```
+
+2. **開発中**
+   ```bash
+   npm run dev         # 開発サーバー起動
+   ```
+
+3. **デプロイ前**
+   ```bash
+   npm run build       # 本番ビルド確認
+   npm run start       # 本番動作確認
+   ```
 
 ## 📞 お問い合わせ
 
